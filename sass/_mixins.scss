@@ -1,0 +1,4 @@
+@mixin focus {
+  outline: 1px dotted is(focus);
+  outline-offset: 2px;
+}

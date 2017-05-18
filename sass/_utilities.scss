@@ -1,0 +1,95 @@
+@function is-map($map){
+  /* returns true if variable is a map */
+  @return type-of($map) == 'map';
+}
+
+%clearfix {
+  &:after, &:before {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+%hidden {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+}
+
+%hide-mobile {
+  @media screen and (max-width: 321px) {
+    display: none;
+  }
+}
+
+%hide-tablet {
+  @media screen and (max-width: 641px) {
+    display: none;
+  }
+}
+
+%show-mobile-only {
+  @media screen and (min-width: 320px) {
+    display: none;
+  }
+  @media screen and (max-width: 321px) {
+    display: inline-block;
+  }
+}
+
+.desktop {
+  @media screen and (min-width: 640px) {
+    display: inline-block;
+  }
+  @media screen and (max-width: 641px) {
+    display: none;
+  }
+}
+
+.tablet {
+  @media screen and (min-width: 640px) {
+    display: none;
+  }
+  @media screen and (max-width: 641px) {
+    display: inline-block;
+  }
+}
+
+.mobile {
+  @media screen and (min-width: 320px) {
+    display: none;
+  }
+  @media screen and (max-width: 321px) {
+    display: inline-block;
+  }
+}
+
+.padding-none {
+  padding: 0;
+}
+
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+
+  &:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+  }
+}
